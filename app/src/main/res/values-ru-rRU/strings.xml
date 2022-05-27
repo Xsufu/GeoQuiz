@@ -4,4 +4,6 @@
     <string name="question_text">Канберра - столица Австралии.</string>
     <string name="true_button">Правда</string>
     <string name="false_button">Ложь</string>
+    <string name="correct_toast">Правильно!</string>
+    <string name="incorrect_toast">Неправильно!</string>
 </resources>
