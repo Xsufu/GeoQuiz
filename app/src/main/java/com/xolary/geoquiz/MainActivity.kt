@@ -36,23 +36,12 @@ class MainActivity : AppCompatActivity() {
 
         //Прослушка на нажатие кнопки "true"
         trueButton.setOnClickListener {
-            var toast = Toast.makeText(
-                this,
-                R.string.correct_toast,
-                Toast.LENGTH_SHORT
-            )
-            toast.show()
-
+            checkAnswer(true)
         }
 
         //Прослушка на нажатие кнопки "false"
         falseButton.setOnClickListener {
-            var toast = Toast.makeText(
-                this,
-                R.string.incorrect_toast,
-                Toast.LENGTH_SHORT
-            )
-            toast.show()
+            checkAnswer(false)
         }
 
         nextButton.setOnClickListener {
@@ -66,5 +55,17 @@ class MainActivity : AppCompatActivity() {
     private fun updateQuestion() {
         val questionTextResID = questionBlank[currentIndex].textResId
         questionTextView.setText(questionTextResID)
+    }
+
+    private fun checkAnswer(userAnswer: Boolean) {
+        val correctAnswer = questionBlank[currentIndex].answer
+
+        val messageResId =
+            if (userAnswer == correctAnswer)
+                R.string.correct_toast
+            else
+                R.string.incorrect_toast
+
+        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show()
     }
 }
