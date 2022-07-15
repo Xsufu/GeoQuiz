@@ -12,6 +12,16 @@ class MainActivity : AppCompatActivity() {
     //Инициализация переменных
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
+    private var currentIndex = 0
+
+    private val questionBlank = listOf(
+        Question(R.string.question_australia, true),
+        Question(R.string.question_oceans, true),
+        Question(R.string.question_mideast, false),
+        Question(R.string.question_africa, false),
+        Question(R.string.question_americas, true),
+        Question(R.string.question_asia, true)
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
