@@ -57,6 +57,15 @@ class MainActivity : AppCompatActivity() {
             toast.show()
         }
 
+        nextButton.setOnClickListener {
+            currentIndex = (currentIndex + 1) % questionBlank.size
+            updateQuestion()
+        }
+
+        updateQuestion()
+    }
+
+    private fun updateQuestion() {
         val questionTextResID = questionBlank[currentIndex].textResId
         questionTextView.setText(questionTextResID)
     }
