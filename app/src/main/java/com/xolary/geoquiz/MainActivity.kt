@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     //Инициализация переменных
     private lateinit var trueButton: Button
     private lateinit var falseButton: Button
+    private lateinit var nextButton: Button
+    private lateinit var questionTextView: TextView
     private var currentIndex = 0
 
     private val questionBlank = listOf(
@@ -30,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         //Привязка элементов макета к переменным
         trueButton = findViewById(R.id.true_button)
         falseButton = findViewById(R.id.false_button)
+        nextButton = findViewById(R.id.next_button)
+        questionTextView = findViewById(R.id.question_field)
 
         //Прослушка на нажатие кнопки "true"
         trueButton.setOnClickListener { view: View ->
@@ -51,5 +56,8 @@ class MainActivity : AppCompatActivity() {
             )
             toast.show()
         }
+
+        val questionTextResID = questionBlank[currentIndex].textResId
+        questionTextView.setText(questionTextResID)
     }
 }
