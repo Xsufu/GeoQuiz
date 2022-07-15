@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         questionTextView = findViewById(R.id.question_field)
 
         //Прослушка на нажатие кнопки "true"
-        trueButton.setOnClickListener { view: View ->
+        trueButton.setOnClickListener {
             var toast = Toast.makeText(
                 this,
                 R.string.correct_toast,
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Прослушка на нажатие кнопки "false"
-        falseButton.setOnClickListener { view: View ->
+        falseButton.setOnClickListener {
             var toast = Toast.makeText(
                 this,
                 R.string.incorrect_toast,
